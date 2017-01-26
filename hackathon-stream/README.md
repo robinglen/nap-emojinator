@@ -12,9 +12,9 @@ Starting the project, for the lazy like me:
 
 ## 26/01/2017 - 8:50 network!
 
-fucking corporate network, on minute 5 waiting for an npm to install.
+Fucking corporate network, on minute 5 waiting for an npm to install.
 
-## 26/01/2017 - 9:22 AP-AYE
+## 26/01/2017 - 9:22 AP-YAY
 
 Just getting the calls to the edit archive in place.
 Here is a sample:
@@ -56,46 +56,47 @@ $ curl https://www.net-a-porter.com/intl/magazineArchive.nap?sort=desc&limit=1&t
 }
 ```
 
-I can't remember but maybe I wrote this API? Either way what is that date response!
-Either way looking at the cover image:
+I can't remember but maybe I wrote this API? Either way what is that date response! Bonkers.
+
+Either way looking at the cover:
 [https://www.net-a-porter.com/alfresco/nap/webAssets/magazine/issues/issue_385/archive/archive_en.jpg](https://www.net-a-porter.com/alfresco/nap/webAssets/magazine/issues/issue_385/archive/archive_en.jpg)
 
-That is going to be usable for the facial recognition stuff, I need something more like:
+That is not going to be usable for the facial recognition stuff, I need something more like:
 [https://www.net-a-porter.com/alfresco/nap/webAssets/webPage/homepage-rebuild/desktop/editorial/2017/01/19/cover/en/retina_EditCover.jpg](https://www.net-a-porter.com/alfresco/nap/webAssets/webPage/homepage-rebuild/desktop/editorial/2017/01/19/cover/en/retina_EditCover.jpg)
 
-There is no API for that so I'm going need think of another way to get it.
+There is no API to get that so I'm going need think of another way to get it.
 
 ## 26/01/2017 - 10:43 network!!!
 
 `Error: RequestError: Error: connect ECONNREFUSED`
 FFS!
 
-Built a local stub method to get around this while I figure out whats going on with the fucking network.
+Built a local stub method to get around this while I figure out whats going on with the  network.
 
 ## 26/01/2017 - 11:00 Working it out
 
-Ok so thankfully the covers follow a predictable pattern so now I can include those in the normalised response. I can now use this to collect all edit covers to do the facial recognition shit.
+Ok so thankfully the covers follow a predictable pattern so now I can include those in the normalised response. Using the insanely verbose date field I know when the Edit is published and can date the date fields on the retina cover.
 
 I think I'm going to have give writing tests a swerve, I don't think I have the time :(
 I've put in Javascript standard style, which I think I like - weird not using semi colons but I like the rest of it a lot.
 
- #Kenrick Lamar - Alright
+ #[Kenrick Lamar - Alright](https://www.youtube.com/watch?v=Z-48u_uWMHY)
 
 ## 26/01/2017 - 11:30 Sorrow, so hot right now
 
 ![Sorrow, so hot right now](/hackathon-stream/img/sorrow.png)
 
- #Todd Terje - Johnn and Mary
+ #[Todd Terje - Johnn and Mary](https://www.youtube.com/watch?v=ibuSxgL83dE)
 
 ## 26/01/2017 - 12:10 I don't understand
 
-Trying to auth with Google Vision... I have no idea what I'm doing
+Trying to auth with Google Vision... I have no idea what I'm doing.
 
- #Karen O & Trent Reznor - Immigrant song
+ #[https://www.youtube.com/watch?v=xQtXsp4tIbw](Karen O & Trent Reznor - Immigrant song)
 
 ## 26/01/2017 - 12:10 Cloud dreams
 
-This is my first time using Google Cloud Platform, I have previously used AWS and found the UX very confusing. I'm going to do my next personal project using it so hopefully it will become a bit easier.
+This is my first time using Google Cloud Platform, I'm used AWS and found the UX very confusing. I'm going to do my next personal project using it so hopefully it will become a bit easier.
 
 There was no need to do a OAuth2 I can just use my API key and make a post request. I sent the following image and asked for labels and facial recognition:
 
@@ -116,6 +117,7 @@ There was no need to do a OAuth2 I can just use my API key and make a post reque
   "headwearLikelihood": "UNLIKELY"
 ```
 This is pretty worrying as I think this is the only picture I have of my smiling and Joy was very unlikely!
+
 More worrying however:
 
 ```
@@ -128,7 +130,7 @@ More worrying however:
 
 There is 82% chance I'm a lady.
 
- #Kate Bush - Running up that hill
+ #[Kate Bush - Running up that hill](https://www.youtube.com/watch?v=wp43OdtAAkM)
 
 ## 26/01/2017 - 13:36 Base64 encode your face
 
@@ -136,43 +138,42 @@ Got it! Although the code is gross callback hell (I will fix with request promis
 
 My Error rate has dropped significantly.
 
-Now I can start collecting some real data.
-
 ![Cloud](/hackathon-stream/img/cloud.png)
 
- #Pixies - Hey
+Now I can start collecting some real data.
+
+ #[Pixies - Hey](https://www.youtube.com/watch?v=MDACd-ShjHk)
 
 ## 26/01/2017 - 14:35 Emoji-ing
 
-[node-emoji](https://www.npmjs.com/package/node-emoji)
+I'm using this for all my emoji needs: [node-emoji](https://www.npmjs.com/package/node-emoji)
 
 ![Emoji](/hackathon-stream/img/emoji.png)
 
-Cheesy peeps! Thats some serious downloading.
+Cheesy peeps! Thats some serious downloads!
 
-Added in the ability to score the emotions.
+Each emotion will be scored based on their [likelihood](https://cloud.google.com/vision/docs/reference/rest/v1/images/annotate)
 ```
 {
   joy: 1,
   sorrow: 2,
   anger: 1,
   surprised: 1,
-  headwear: 1,
   total: 6
 }
 ```
+I will use this to select a relevent emoji
 
- #Queens of the stone age - You think I anin't worth dollar
+ #[Queens of the stone age - You think I ain't worth dollar...](https://www.youtube.com/watch?v=mS8LvHT_zcQ)
 
-## 26/01/2017 - 15:45 Emoji-ing
 
- Score generated to select most popular emoji
-
-## 26/01/2017 - 16:00 SJ(oy)P 😂
+## 26/01/2017 - 16:00 SJ(oy)P
 
 Ok so I have a basic scoring system in place which is selecting an emoji based on the feedback from Google Vision.
 
 ![SJP](/hackathon-stream/img/sjp.png)
+
+I have used the Edit archive API, some naming conventions, Google vision to generate a new model for each cover of the edit.
 
 ```
 {
@@ -192,17 +193,22 @@ Ok so I have a basic scoring system in place which is selecting an emoji based o
 }
 ```
 
- #Rob Zombie - Dragula
+ #[Rob Zombie - Dragula](https://www.youtube.com/watch?v=s1Z1Zrot-go)
 
 ## 26/01/2017 - 16:30 Now what?
 
-Ok so I got some data, now I want to try and figure out what to do with it! I would like to make the emojinator more sensitive but I will update that in the end.
+Ok so I got some data, now I want to try and figure out what to do with it! I would like to make the emojinator more sensitive, so joy can have different emoji depending on the score but I will update that in the end.
 
-So my first thought is maybe graphing to find the trends of emotions, maybe then over lay with click through to give some business values.
+So my first thought is maybe graphing to find the trends of emotions, maybe then over lay with click through to give some thing to talk to the business about tomorrow.
 
 ## 26/01/2017 - 17:50 Keen for keen
 
-Ok the code has got gross, not happy with thatm maybe clean it up but for now I have integrated keen.io where I'm sending data.
+Ok the code has got gross, not happy with that maybe clean it up when I have time.
+
+I thought about mapping the data in terminal like I dod for this project:
+[https://github.com/NET-A-PORTER/product-image-perf](https://github.com/NET-A-PORTER/product-image-perf)
+
+However I don't think I have the time, so I have intergrated with [keen.io](https://keen.io/). Basically I'm just going to chuck them all the records, they will deal with the ingestion but also I can use their platform to draw some sexy graphs
 
 Not sure what I'm going to do with it yet... but thats where it's going!
 
