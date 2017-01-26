@@ -83,4 +83,4 @@ I've put in Javascript standard style, which I think I like - weird not using se
 
 ## 26/01/2017 - 11:30 Sorrow, so hot right now
 
-![Sorrow, so hot right now](/img/sorrow.png)
+![Sorrow, so hot right now](/hackathon-stream/img/sorrow.png)
