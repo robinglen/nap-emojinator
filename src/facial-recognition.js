@@ -1,18 +1,55 @@
-const key = process.env.API_KEY
+const request = require('request').defaults({
+    encoding: null
+});
+const KEY = process.env.API_KEY
 
 const facialRecognition = {
-  init: () => {
 
-  },
+    _encodeImage: (imageUrl, callback) => {
+        request.get({
+            url: imageUrl,
+            encoding: 'binary'
+        }, (error, response, body) => {
+            if (!error && response.statusCode == 200) {
+                const encodedImage = new Buffer(body, 'binary').toString('base64')
+                callback(encodedImage)
+            }
+        });
+    },
 
-  _generateRequest: (image) => {
+    _requestObject: (imageUrl, callback) => {
+        facialRecognition._encodeImage(imageUrl, (base64) => {
+            callback({
+                requests: [{
+                    image: {
+                        content: base64
+                    },
+                    features: [{
+                        type: 'FACE_DETECTION',
+                        maxResults: 10
+                    }, {
+                        type: 'LABEL_DETECTION',
+                        maxResults: 10
+                    }]
+                }]
+            })
+        })
+    },
 
-  },
-
-  requestImage: (image) => {
-
-  }
-
+    requestImage: (imageUrl) => {
+        const API = `https://vision.googleapis.com/v1/images:annotate?key=${KEY}`
+        facialRecognition._requestObject(imageUrl, (req) => {
+            request({
+                method: "POST",
+                url: API,
+                json: req
+            }, (error, response, body) => {
+                if (!error && response.statusCode == 200) {
+                    console.log(body.responses[0].faceAnnotations);
+                }
+            });
+        })
+    }
 }
 
 module.exports = facialRecognition

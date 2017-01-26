@@ -93,7 +93,7 @@ Trying to auth with Google Vision... I have no idea what I'm doing
 
  #Karen O & Trent Reznor - Immigrant song
 
-## 26/01/2017 - 12:10 Base64 encode your face
+## 26/01/2017 - 12:10 Cloud dreams
 
 This is my first time using Google Cloud Platform, I have previously used AWS and found the UX very confusing. I'm going to do my next personal project using it so hopefully it will become a bit easier.
 
@@ -129,3 +129,15 @@ More worrying however:
 There is 82% chance I'm a lady.
 
  #Kate Bush - Running up that hill
+
+## 26/01/2017 - 13:36 Base64 encode your face
+
+Got it! Although the code is gross callback hell (I will fix with request promise shortly) I have data coming back from a Base64 encoded Ruby Rose.
+
+My Error rate has dropped significantly.
+
+Now I can start collecting some real data.
+
+![Cloud](/hackathon-stream/img/cloud.png)
+
+ #Pixies - Hey
