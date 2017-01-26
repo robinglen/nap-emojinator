@@ -148,12 +148,14 @@ Now I can start collecting some real data.
 
 ![Emoji](/hackathon-stream/img/emoji.png)
 
+Cheesy peeps! Thats some resious downloading.
+
 Added in the ability to score the emotions.
 ```
 {
   joy: 1,
   sorrow: 2,
-  anger: 1, 
+  anger: 1,
   surprised: 1,
   headwear: 1,
   total: 6
@@ -161,3 +163,7 @@ Added in the ability to score the emotions.
 ```
 
  #Queens of the stone age - You think I anin't worth dollar
+
+ ## 26/01/2017 - 15:45 Emoji-ing
+
+ Score generated to select most popular emoji

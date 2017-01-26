@@ -7,13 +7,14 @@ const theEditData = {
         return new Promise((resolve, reject) => {
             rp(API_TEMPLATE)
                 .then((data) => {
-                    resolve(data)
+                    resolve(JSON.parse(data))
                 })
                 .catch((err) => {
                     reject(Error(err))
                 })
         })
     },
+
     getLocal: () => {
         return new Promise((resolve, reject) => {
             resolve(require('./stubs/edit-api.json'))

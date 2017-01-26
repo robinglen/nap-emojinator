@@ -7,8 +7,8 @@ theEditData.getLocal('desc', 1, 86, false, 0)
     const normalisedIssues = theEditData.normaliseIssues(data.slice)
     normalisedIssues.forEach((issue) => {
       facialRecognition.requestImage(issue.cover.large, (results) => {
-        const score = emojinator.init(results[0])
-        console.log(score);
+        const emoji = emojinator.init(results[0])
+        console.log(emoji);
       })
     })
   })

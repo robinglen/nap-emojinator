@@ -1,19 +1,15 @@
 const emoji = require('node-emoji')
 const emojinator = {
     _emoji: {
-        core: {
-            joy: emoji.get('joy'),
-            sorrow: emoji.get('disappointed_relieved'),
-            anger: emoji.get('rage'),
-            surprised: emoji.get('flushed'),
-            headwear: emoji.get('tophat')
-        },
-        states : {
-            confused: emoji.get('confused'),
-            robot: emoji.get('robot')
-        }
+        joy: emoji.get(':joy:'),
+        sorrow: emoji.get('disappointed_relieved'),
+        anger: emoji.get('rage'),
+        surprised: emoji.get('flushed'),
+        headwear: emoji.get('tophat'),
+        confused: emoji.get('confused'),
+        robot: emoji.get(':robot_face:')
     },
-    _score: (likelihood) => {
+    _tallyPoints: (likelihood) => {
         var score = 0
         switch(likelihood) {
             case 'VERY_UNLIKELY':
@@ -39,20 +35,45 @@ const emojinator = {
         }
         return score
     },
-    init: (facialRecognition) => {
+    _score: (facialRecognition) => {
         var total = 0
         const scores = {
-            joy: emojinator._score(facialRecognition.joyLikelihood),
-            sorrow: emojinator._score(facialRecognition.sorrowLikelihood),
-            anger: emojinator._score(facialRecognition.angerLikelihood),
-            surprised: emojinator._score(facialRecognition.surpriseLikelihood),
-            headwear: emojinator._score(facialRecognition.headwearLikelihood)
+            emotions: {
+                joy: emojinator._tallyPoints(facialRecognition.joyLikelihood),
+                sorrow: emojinator._tallyPoints(facialRecognition.sorrowLikelihood),
+                anger: emojinator._tallyPoints(facialRecognition.angerLikelihood),
+                surprised: emojinator._tallyPoints(facialRecognition.surpriseLikelihood),
+                headwear: emojinator._tallyPoints(facialRecognition.headwearLikelihood)
+            }
         }
-        for(var emotion in scores) {
-            total = total + scores[emotion]
+        for(var emotion in scores.emotions) {
+            total = total + scores.emotions[emotion]
         }
         scores.total = total;
         return scores
+    },
+
+    _strongestEmotion: (obj) => {
+        return Object.keys(obj).reduce(function(a, b){ return obj[a] > obj[b] ? a : b });
+    },
+
+    _emojinate: (score) => {
+        var status = {}
+        if (score.total <=5) {
+            status.name = 'robot';
+            status.emoji = emojinator._emoji.robot
+        } else {
+            var emotion = emojinator._strongestEmotion(score.emotions)
+            status.name = emotion;
+            status.emoji = emojinator._emoji[emotion]
+            status.score = score.emotions[emotion]
+        }
+        return status
+    },
+
+    init: (facialRecognition) => {
+        const score = emojinator._score(facialRecognition)
+        return emojinator._emojinate(score)
     }
 }
 
