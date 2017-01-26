@@ -99,7 +99,7 @@ This is my first time using Google Cloud Platform, I have previously used AWS an
 
 There was no need to do a OAuth2 I can just use my API key and make a post request. I sent the following image and asked for labels and facial recognition:
 
-![Me](/hackathon-stream/img/Robin.png)
+![Me](/hackathon-stream/img/robin.png)
 
 ```
   "rollAngle": -2.4148004,
