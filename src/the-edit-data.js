@@ -4,6 +4,7 @@ const DOMAIN = 'https://www.net-a-porter.com'
 const theEditData = {
     get: (sort, limit, total, bundle, offset) => {
         const API_TEMPLATE = `${DOMAIN}/intl/magazineArchive.nap?sort=${sort}&limit=${limit}&total=${total}getBundle=${bundle}&offset=${offset}`
+        console.log(API_TEMPLATE);
         return new Promise((resolve, reject) => {
             rp(API_TEMPLATE)
                 .then((data) => {
@@ -29,13 +30,14 @@ const theEditData = {
                 number: issue.number,
                 cover: {
                     small: `${DOMAIN}${issue.cover}`,
-                    large: theEditData._getLargeCoverUrl(issue.date.http)
+                    large: theEditData._getLargeCoverUrl(issue.date.iso)
                 },
                 shop: issue.shop,
                 label: issue.label,
-                date: issue.date.http
+                date: issue.date.iso
             })
         })
+
         return normalisedIssues
     },
 

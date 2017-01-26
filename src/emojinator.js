@@ -8,6 +8,7 @@ const emojinator = {
         confused: emoji.get('confused'),
         robot: emoji.get(':robot_face:')
     },
+
     _tallyPoints: (likelihood) => {
         var score = 0
         switch(likelihood) {
@@ -35,17 +36,20 @@ const emojinator = {
         return score
     },
     _score: (facialRecognition) => {
+        var scores = {}
         var total = 0
-        const scores = {
-            emotions: {
-                joy: emojinator._tallyPoints(facialRecognition.joyLikelihood),
-                sorrow: emojinator._tallyPoints(facialRecognition.sorrowLikelihood),
-                anger: emojinator._tallyPoints(facialRecognition.angerLikelihood),
-                surprised: emojinator._tallyPoints(facialRecognition.surpriseLikelihood)
+        if (facialRecognition && facialRecognition.joyLikelihood) {
+            scores = {
+                emotions: {
+                    joy: emojinator._tallyPoints(facialRecognition.joyLikelihood),
+                    sorrow: emojinator._tallyPoints(facialRecognition.sorrowLikelihood),
+                    anger: emojinator._tallyPoints(facialRecognition.angerLikelihood),
+                    surprised: emojinator._tallyPoints(facialRecognition.surpriseLikelihood)
+                }
             }
-        }
-        for(var emotion in scores.emotions) {
-            total = total + scores.emotions[emotion]
+            for(var emotion in scores.emotions) {
+                total = total + scores.emotions[emotion]
+            }
         }
         scores.total = total;
         return scores

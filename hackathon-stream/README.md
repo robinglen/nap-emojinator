@@ -148,7 +148,7 @@ Now I can start collecting some real data.
 
 ![Emoji](/hackathon-stream/img/emoji.png)
 
-Cheesy peeps! Thats some resious downloading.
+Cheesy peeps! Thats some serious downloading.
 
 Added in the ability to score the emotions.
 ```
@@ -168,7 +168,7 @@ Added in the ability to score the emotions.
 
  Score generated to select most popular emoji
 
-## 26/01/2017 - 14:35 SJ(oy)P 😂
+## 26/01/2017 - 16:00 SJ(oy)P 😂
 
 Ok so I have a basic scoring system in place which is selecting an emoji based on the feedback from Google Vision.
 
@@ -193,3 +193,17 @@ Ok so I have a basic scoring system in place which is selecting an emoji based o
 ```
 
  #Rob Zombie - Dragula
+
+## 26/01/2017 - 16:30 Now what?
+
+Ok so I got some data, now I want to try and figure out what to do with it! I would like to make the emojinator more sensitive but I will update that in the end.
+
+So my first thought is maybe graphing to find the trends of emotions, maybe then over lay with click through to give some business values.
+
+## 26/01/2017 - 17:50 Keen for keen
+
+Ok the code has got gross, not happy with thatm maybe clean it up but for now I have integrated keen.io where I'm sending data.
+
+Not sure what I'm going to do with it yet... but thats where it's going!
+
+Thats it for today. More tomorrow.

@@ -13,6 +13,9 @@ const facialRecognition = {
             if (!error && response.statusCode == 200) {
                 const encodedImage = new Buffer(body, 'binary').toString('base64')
                 callback(encodedImage)
+            } else {
+                console.log('error');
+                console.log(imageUrl);
             }
         });
     },
@@ -45,7 +48,14 @@ const facialRecognition = {
                 json: req
             }, (error, response, body) => {
                 if (!error && response.statusCode == 200) {
-                    callback(body.responses[0].faceAnnotations)
+                    if (body.responses[0].faceAnnotations) {
+                        callback(body.responses[0].faceAnnotations)
+                    } else {
+                        console.log('error');
+                        callback({})
+                    }
+                } else {
+                    console.log('error 2')
                 }
             });
         })
