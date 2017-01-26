@@ -1,0 +1,31 @@
+{
+    "total": 86,
+    "limit": 1,
+    "sort": "desc",
+    "offset": 0,
+    "forward": 85,
+    "next": "/intl/magazineArchive.nap?sort=desc&limit=1&total=86&getBundle=false&offset=1",
+    "back": 0,
+    "prev": "",
+    "template": "/intl/magazineArchive.nap?sort={sort}&limit={limit}&total={total}getBundle={getBundle}&offset={offset}",
+    "slice": [{
+        "@detail": "/alfresco/service/cms/nap/magazine/issue/4d0466b9-53d6-4dcc-b1c9-6efdaae4c2de?language=en&channel=intl&device=desktop&country=gb",
+        "id": "4d0466b9-53d6-4dcc-b1c9-6efdaae4c2de",
+        "number": 385,
+        "cover": "/alfresco/nap/webAssets/magazine/issues/issue_385/archive/archive_en.jpg",
+        "description": "",
+        "shop": "/Shop/List/shop_the_wild_flowers_issue_",
+        "title": "",
+        "label": "Issue 385 (19 January 2017)",
+        "date": {
+            "http": "Thu, 19 Jan 2017 00:00:00 GMT",
+            "iso": "2017-01-19T00:00:00.000Z",
+            "js": "01/19/2017",
+            "full": "Thursday January 19 2017",
+            "long": "Thursday January 19",
+            "medium": "January 19 2017",
+            "short": "01/19/2017",
+            "shortTerm": "January 19"
+        }
+    }]
+}

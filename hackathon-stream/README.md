@@ -64,3 +64,19 @@ That is going to be usable for the facial recognition stuff, I need something mo
 [https://www.net-a-porter.com/alfresco/nap/webAssets/webPage/homepage-rebuild/desktop/editorial/2017/01/19/cover/en/retina_EditCover.jpg](https://www.net-a-porter.com/alfresco/nap/webAssets/webPage/homepage-rebuild/desktop/editorial/2017/01/19/cover/en/retina_EditCover.jpg)
 
 There is no API for that so I'm going need think of another way to get it.
+
+## 26/01/2017 - 10:43 network!!!
+
+`Error: RequestError: Error: connect ECONNREFUSED`
+FFS!
+
+Built a local stub method to get around this while I figure out whats going on with the fucking network.
+
+## 26/01/2017 - 11:00 Working it out
+
+Ok so thankfully the covers follow a predictable pattern so now I can include those in the normalised response. I can now use this to collect all edit covers to do the facial recognition shit.
+
+I think I'm going to have give writing tests a swerve, I don't think I have the time :(
+I've put in Javascript standard style, which I think I like - weird not using semi colons but I like the rest of it a lot.
+
+- #Kenrick Lamer - Alright

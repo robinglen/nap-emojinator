@@ -1,8 +1,9 @@
 const theEditData = require('./src/the-edit-data')
 
-theEditData.get('desc', 1, 86, false, 0)
+theEditData.getLocal('desc', 1, 86, false, 0)
   .then((data)=> {
-    console.log(data);
+    const normalisedIssues = theEditData.normaliseIssues(data.slice)
+    console.log(normalisedIssues);
   })
   .catch((err)=> {
     console.log(err);
