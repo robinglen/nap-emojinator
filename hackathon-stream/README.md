@@ -86,3 +86,7 @@ I've put in Javascript standard style, which I think I like - weird not using se
 ![Sorrow, so hot right now](/hackathon-stream/img/sorrow.png)
 
  #Todd Terje - Johnn and Mary
+
+## 26/01/2017 - 12:10 I don't understand
+
+Trying to auth with Google Vision... I have no idea what I'm doing
