@@ -79,8 +79,10 @@ Ok so thankfully the covers follow a predictable pattern so now I can include th
 I think I'm going to have give writing tests a swerve, I don't think I have the time :(
 I've put in Javascript standard style, which I think I like - weird not using semi colons but I like the rest of it a lot.
 
-- #Kenrick Lamer - Alright
+ #Kenrick Lamar - Alright
 
 ## 26/01/2017 - 11:30 Sorrow, so hot right now
 
 ![Sorrow, so hot right now](/hackathon-stream/img/sorrow.png)
+
+ #Todd Terje - Johnn and Mary
