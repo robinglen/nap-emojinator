@@ -4,7 +4,7 @@ const emojinator = require('./src/emojinator')
 const trendinator = require('./src/trendinator')
 
 theEditData.get('desc', 2, 86, false, 0)
-  .then((data)=> {
+  .then((data) => {
     const normalisedIssues = theEditData.normaliseIssues(data.slice)
     normalisedIssues.forEach((issue, index) => {
       facialRecognition.requestImage(issue.cover.large, (results) => {
@@ -13,6 +13,6 @@ theEditData.get('desc', 2, 86, false, 0)
       })
     })
   })
-  .catch((err)=> {
-    console.log(err);
+  .catch((err) => {
+    console.log(err)
   })
