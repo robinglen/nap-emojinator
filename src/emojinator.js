@@ -1,11 +1,11 @@
 const emoji = require('node-emoji')
 const emojinator = {
-    emoji: () => {
+    _emoji: {
         core: {
             joy: emoji.get('joy'),
             sorrow: emoji.get('disappointed_relieved'),
             anger: emoji.get('rage'),
-            confused: emoji.get('flushed')
+            surprised: emoji.get('flushed'),
             headwear: emoji.get('tophat')
         },
         states : {
@@ -13,7 +13,7 @@ const emojinator = {
             robot: emoji.get('robot')
         }
     },
-    score: (likelihood) => {
+    _score: (likelihood) => {
         var score = 0
         switch(likelihood) {
             case 'VERY_UNLIKELY':
@@ -36,7 +36,23 @@ const emojinator = {
                 break;
             default:
                 score = 0
+        }
         return score
+    },
+    init: (facialRecognition) => {
+        var total = 0
+        const scores = {
+            joy: emojinator._score(facialRecognition.joyLikelihood),
+            sorrow: emojinator._score(facialRecognition.sorrowLikelihood),
+            anger: emojinator._score(facialRecognition.angerLikelihood),
+            surprised: emojinator._score(facialRecognition.surpriseLikelihood),
+            headwear: emojinator._score(facialRecognition.headwearLikelihood)
+        }
+        for(var emotion in scores) {
+            total = total + scores[emotion]
+        }
+        scores.total = total;
+        return scores
     }
 }
 

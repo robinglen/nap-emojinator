@@ -148,4 +148,16 @@ Now I can start collecting some real data.
 
 ![Emoji](/hackathon-stream/img/emoji.png)
 
+Added in the ability to score the emotions.
+```
+{
+  joy: 1,
+  sorrow: 2,
+  anger: 1, 
+  surprised: 1,
+  headwear: 1,
+  total: 6
+}
+```
+
  #Queens of the stone age - You think I anin't worth dollar
