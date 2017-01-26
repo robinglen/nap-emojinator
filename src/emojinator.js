@@ -5,7 +5,6 @@ const emojinator = {
         sorrow: emoji.get('disappointed_relieved'),
         anger: emoji.get('rage'),
         surprised: emoji.get('flushed'),
-        headwear: emoji.get('tophat'),
         confused: emoji.get('confused'),
         robot: emoji.get(':robot_face:')
     },
@@ -42,8 +41,7 @@ const emojinator = {
                 joy: emojinator._tallyPoints(facialRecognition.joyLikelihood),
                 sorrow: emojinator._tallyPoints(facialRecognition.sorrowLikelihood),
                 anger: emojinator._tallyPoints(facialRecognition.angerLikelihood),
-                surprised: emojinator._tallyPoints(facialRecognition.surpriseLikelihood),
-                headwear: emojinator._tallyPoints(facialRecognition.headwearLikelihood)
+                surprised: emojinator._tallyPoints(facialRecognition.surpriseLikelihood)
             }
         }
         for(var emotion in scores.emotions) {
@@ -59,7 +57,7 @@ const emojinator = {
 
     _emojinate: (score) => {
         var status = {}
-        if (score.total <=5) {
+        if (score.total <=4) {
             status.name = 'robot';
             status.emoji = emojinator._emoji.robot
         } else {

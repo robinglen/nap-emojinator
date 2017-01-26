@@ -164,6 +164,30 @@ Added in the ability to score the emotions.
 
  #Queens of the stone age - You think I anin't worth dollar
 
- ## 26/01/2017 - 15:45 Emoji-ing
+## 26/01/2017 - 15:45 Emoji-ing
 
  Score generated to select most popular emoji
+
+## 26/01/2017 - 14:35 SJ(oy)P 😂
+
+Ok so I have a basic scoring system in place which is selecting an emoji based on the feedback from Google Vision.
+
+![SJP](/hackathon-stream/img/sjp.png)
+
+```
+{
+  number: 377,
+  cover: {
+    small: 'https://www.net-a-porter.com/alfresco/nap/webAssets/magazine/issues/issue_377/archive/archive_en.jpg',
+    large: 'https://www.net-a-porter.com/alfresco/nap/webAssets/webPage/homepage-rebuild/desktop/editorial/2016/11/17/cover/en/retina_EditCover.jpg'
+  },
+  shop: '/Shop/List/SHOP_THE_STYLE_-_THE_CITY_ISSUE',
+  label: 'Issue 377 (17 November 2016)',
+  date: 'Thu, 17 Nov 2016 00:00:00 GMT',
+  emoji: {
+    name: 'joy',
+    emoji: '😂',
+    score: 4
+  }
+}
+```
