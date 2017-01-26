@@ -90,3 +90,5 @@ I've put in Javascript standard style, which I think I like - weird not using se
 ## 26/01/2017 - 12:10 I don't understand
 
 Trying to auth with Google Vision... I have no idea what I'm doing
+
+ #Karen O & Trent Reznor - Immigrant song
