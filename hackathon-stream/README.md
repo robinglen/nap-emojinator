@@ -92,3 +92,40 @@ I've put in Javascript standard style, which I think I like - weird not using se
 Trying to auth with Google Vision... I have no idea what I'm doing
 
  #Karen O & Trent Reznor - Immigrant song
+
+## 26/01/2017 - 12:10 Base64 encode your face
+
+This is my first time using Google Cloud Platform, I have previously used AWS and found the UX very confusing. I'm going to do my next personal project using it so hopefully it will become a bit easier.
+
+There was no need to do a OAuth2 I can just use my API key and make a post request. I sent the following image and asked for labels and facial recognition:
+
+![Me](/hackathon-stream/img/Robin.png)
+
+```
+  "rollAngle": -2.4148004,
+  "panAngle": 3.6995285,
+  "tiltAngle": 17.30132,
+  "detectionConfidence": 0.5902579,
+  "landmarkingConfidence": 0.3260452,
+  "joyLikelihood": "VERY_LIKELY",
+  "sorrowLikelihood": "VERY_UNLIKELY",
+  "angerLikelihood": "VERY_UNLIKELY",
+  "surpriseLikelihood": "VERY_UNLIKELY",
+  "underExposedLikelihood": "VERY_UNLIKELY",
+  "blurredLikelihood": "VERY_UNLIKELY",
+  "headwearLikelihood": "UNLIKELY"
+```
+This is pretty worrying as I think this is the only picture I have of my smiling and Joy was very unlikely!
+More worrying however:
+
+```
+{
+    "mid": "/m/02pkb8",
+    "description": "lady",
+    "score": 0.82360065
+}
+```
+
+There is 82% chance I'm a lady.
+
+ #Kate Bush - Running up that hill
