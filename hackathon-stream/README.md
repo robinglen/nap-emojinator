@@ -141,3 +141,11 @@ Now I can start collecting some real data.
 ![Cloud](/hackathon-stream/img/cloud.png)
 
  #Pixies - Hey
+
+## 26/01/2017 - 14:35 Emoji-ing
+
+[node-emoji](https://www.npmjs.com/package/node-emoji)
+
+![Emoji](/hackathon-stream/img/emoji.png)
+
+ #Queens of the stone age - You think I anin't worth dollar

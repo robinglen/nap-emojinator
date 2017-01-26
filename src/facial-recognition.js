@@ -36,7 +36,7 @@ const facialRecognition = {
         })
     },
 
-    requestImage: (imageUrl) => {
+    requestImage: (imageUrl, callback) => {
         const API = `https://vision.googleapis.com/v1/images:annotate?key=${KEY}`
         facialRecognition._requestObject(imageUrl, (req) => {
             request({
@@ -45,7 +45,7 @@ const facialRecognition = {
                 json: req
             }, (error, response, body) => {
                 if (!error && response.statusCode == 200) {
-                    console.log(body.responses[0].faceAnnotations);
+                    callback(body.responses[0].faceAnnotations)
                 }
             });
         })

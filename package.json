@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/thearegee/nap-emojinator",
   "dependencies": {
+    "node-emoji": "^1.5.1",
     "request": "^2.79.0",
     "request-promise": "^4.1.1"
   },
