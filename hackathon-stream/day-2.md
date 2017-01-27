@@ -18,4 +18,27 @@ This is a great reference if you are creating some dashboards:
 
 My Mac is only running Yosemite, I don't have the bloody Emoji for a robot, this might be the tipping point and tempt to upgrade!
 `ctrl+cmd+space`
-Brings up the Emoji character map, where have you been granddad! 
+Brings up the Emoji character map, where have you been granddad!
+
+## 26/01/2017 - 11:48 The results are in
+
+I have now run the final data collection, got all the results.
+
+![Trends](/hackathon-stream/img/trends.png)
+
+The breakdown can be found here.
+[Results]('results.md')
+
+There is a server to get the results from keen, the server can be accessed like so:
+
+```
+$ npm start
+
+http://localhost:8080/trendinator
+```
+
+Now I just need to type up some slides, make this more amusing than it is useful and not win a trip to New York.
+
+I might try a code clean up after this too, just so it's not such a mess.
+
+ #[The Rolling Stones - Paint it black](https://www.youtube.com/watch?v=O4irXQhgMqg)
