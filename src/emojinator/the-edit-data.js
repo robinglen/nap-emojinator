@@ -11,6 +11,7 @@ const theEditData = {
                   resolve(JSON.parse(data))
                 })
                 .catch((err) => {
+                  console.log('API failure');
                   reject(Error(err))
                 })
     })

@@ -4,7 +4,8 @@
   "description": "Hackathon project to understand the emotional well being of Edit cover starts via emoji.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.js",
+    "start:emojinator": "node index.js",
     "test": "npm run test:lint",
     "test:lint": "standard 'src/*.js' 'src/**/*.js'"
   },

@@ -14,7 +14,7 @@ const facialRecognition = {
         const encodedImage = new Buffer(body, 'binary').toString('base64')
         callback(encodedImage)
       } else {
-        console.log('error')
+        console.log('Error converting image to base64')
         console.log(imageUrl)
       }
     })
@@ -51,11 +51,11 @@ const facialRecognition = {
           if (body.responses[0].faceAnnotations) {
             callback(body.responses[0].faceAnnotations)
           } else {
-            console.log('error')
+            console.log('Error no faces found:', imageUrl)
             callback({})
           }
         } else {
-          console.log('error 2')
+          console.log('Vision API failure')
         }
       })
     })

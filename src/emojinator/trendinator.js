@@ -11,9 +11,7 @@ const trendinator = {
   send: (result) => {
     client.addEvent('EMOJI', result, function (err, res) {
       if (err) {
-        console.log('Oh no, an error!')
-      } else {
-        console.log('Hooray, it worked!')
+        console.log('Error sending data to keen')
       }
     })
   }
