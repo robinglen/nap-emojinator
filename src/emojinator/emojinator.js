@@ -2,7 +2,7 @@ const emoji = require('node-emoji')
 const emojinator = {
   _emoji: {
     joy: emoji.get(':joy:'),
-    sorrow: emoji.get('disappointed_relieved'),
+    sorrow: emoji.get('disappointed'),
     anger: emoji.get('rage'),
     surprised: emoji.get('flushed'),
     confused: emoji.get('confused'),

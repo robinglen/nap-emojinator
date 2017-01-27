@@ -37,77 +37,77 @@
   <div class="container-fluid">
     <div class="row">
 
-      <div class="col-sm-8">
+      <div class="col-sm-12">
         <div class="chart-wrapper">
-          <div class="chart-title">
-            Pageviews by browser (past 24 hours)
+          <div id="total-issues" class="chart-title">
+            Total Edit Issues
           </div>
           <div class="chart-stage">
             <div id="chart-01"></div>
           </div>
           <div class="chart-notes">
-            This is a sample text region to describe this chart.
+            All the edit issues found
           </div>
         </div>
       </div>
 
-      <div class="col-sm-4">
+    </div>
+
+
+    <div class="row">
+
+      <div class="col-sm-3">
         <div class="chart-wrapper">
           <div class="chart-title">
-            Pageviews by browser (past 5 days)
+            Joy Emoji
           </div>
           <div class="chart-stage">
             <div id="chart-02"></div>
           </div>
           <div class="chart-notes">
-            Notes go down here
+            Covers showing Joy
           </div>
         </div>
       </div>
 
-    </div>
-
-
-    <div class="row">
-
-      <div class="col-sm-4">
+      <div class="col-sm-3">
         <div class="chart-wrapper">
           <div class="chart-title">
-            Impressions by advertiser
+            Surprised Emoji
           </div>
           <div class="chart-stage">
             <div id="chart-03"></div>
           </div>
           <div class="chart-notes">
-            Notes go down here
+            Covers showing Surprise
           </div>
         </div>
       </div>
 
-      <div class="col-sm-4">
+      <div class="col-sm-3">
         <div class="chart-wrapper">
           <div class="chart-title">
-            Impressions by device
+            Sorrow Emoji
           </div>
           <div class="chart-stage">
             <div id="chart-04"></div>
           </div>
           <div class="chart-notes">
-            Notes go down here
+            Covers showing sorrow
           </div>
         </div>
       </div>
 
-      <div class="col-sm-4">
+      <div class="col-sm-3">
         <div class="chart-wrapper">
           <div class="chart-title">
-            Impressions by country
+            Robot Emoji
           </div>
           <div class="chart-stage">
             <div id="chart-05"></div>
           </div>
           <div class="chart-notes">
-            Notes go down here
+            Covers showing robots
           </div>
         </div>
       </div>
@@ -115,26 +115,21 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-3">
+
+      <div class="col-sm-12">
         <div class="chart-wrapper">
-          <img data-src="holder.js/100%x150/white">
+          <div id="total-issues" class="chart-title">
+            Share of emotions
+          </div>
+          <div class="chart-stage">
+            <div id="chart-06"></div>
+          </div>
+          <div class="chart-notes">
+            The percentage of emotions show
+          </div>
         </div>
       </div>
-      <div class="col-sm-3">
-        <div class="chart-wrapper">
-          <img data-src="holder.js/100%x150/white">
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="chart-wrapper">
-          <img data-src="holder.js/100%x150/white">
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="chart-wrapper">
-          <img data-src="holder.js/100%x150/white">
-        </div>
-      </div>
+
     </div>
 
     <hr>
@@ -153,7 +148,115 @@
 
   <script type="text/javascript" src="https://keen.github.io/dashboards/assets/lib/keen-js/dist/keen.min.js"></script>
   <script type="text/javascript" src="https://keen.github.io/dashboards/assets/js/meta.js"></script>
-  <script type="text/javascript" src="https://keen.github.io/dashboards/examples/starter-kit/keen.dashboard.js"></script>
+
+  <script>
+
+  var client = new Keen({
+  projectId: "588a34818db53dfda8a84a34",
+  readKey: "8E828AAC41D948120D46CFED428B9ECC39EE43CB7F6FBA90810A2ED1933745F102F05170A43D7987DA3BBF3EF3F38A89C010CB6541F01818E0F294CE289262F0CD2007995E9FFE97E552A3BCE9D6142214E4E5C4799B4A43370F7D0B5695E1A1"
+});
+
+Keen.ready(function(){
+
+  var totalIssues = new Keen.Query("count", {
+    event_collection: "EMOJI",
+    timeframe: "this_1_days",
+    timezone: "UTC"
+  });
+
+  var joyTotal = new Keen.Query("count", {
+    event_collection: "EMOJI",
+    filters: [
+    {
+        "operator": "eq",
+        "property_name": "emoji.name",
+        "property_value": "joy"
+    }
+  ],
+    timeframe: "this_1_days",
+    timezone: "UTC"
+  });
+
+  var surprisedTotal = new Keen.Query("count", {
+    event_collection: "EMOJI",
+    filters: [
+    {
+        "operator": "eq",
+        "property_name": "emoji.name",
+        "property_value": "surprised"
+    }
+],
+    timeframe: "this_1_days",
+    timezone: "UTC"
+  });
+
+  var sorrowTotal = new Keen.Query("count", {
+    event_collection: "EMOJI",
+    filters: [
+    {
+        "operator": "eq",
+        "property_name": "emoji.name",
+        "property_value": "sorrow"
+    }
+],
+    timeframe: "this_1_days",
+    timezone: "UTC"
+  });
+
+    var robotTotal = new Keen.Query("count", {
+      event_collection: "EMOJI",
+      filters: [
+      {
+          "operator": "eq",
+          "property_name": "emoji.name",
+          "property_value": "robot"
+      }
+  ],
+      timeframe: "this_1_days",
+      timezone: "UTC"
+    });
+
+    var pie = new Keen.Query("count", {
+       event_collection: "EMOJI",
+       group_by: [
+       "emoji.name"
+   ],
+       timeframe: "this_1_days",
+       timezone: "UTC"
+     });
+
+
+
+  client.draw(totalIssues, document.getElementById("chart-01"), {
+    // Custom configuration here
+  });
+
+
+  client.draw(joyTotal, document.getElementById("chart-02"), {
+    // Custom configuration here
+  });
+
+  client.draw(surprisedTotal, document.getElementById("chart-03"), {
+    // Custom configuration here
+  });
+
+  client.draw(sorrowTotal, document.getElementById("chart-04"), {
+    // Custom configuration here
+  });
+
+
+  client.draw(robotTotal, document.getElementById("chart-05"), {
+    // Custom configuration here
+  });
+
+  client.draw(pie, document.getElementById("chart-06"), {
+    // Custom configuration here
+  });
+
+});
+
+  </script>
+
 
 </body>
 </html>

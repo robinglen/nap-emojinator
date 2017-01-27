@@ -13,3 +13,9 @@ So decided to implement a super stupid web server thats going to serve a simple 
 
 This is a great reference if you are creating some dashboards:
 [Keen dashboards](https://keen.github.io/dashboards/examples/)
+
+## 26/01/2017 - 10:30 EMOJI!
+
+My Mac is only running Yosemite, I don't have the bloody Emoji for a robot, this might be the tipping point and tempt to upgrade!
+`ctrl+cmd+space`
+Brings up the Emoji character map, where have you been granddad! 
