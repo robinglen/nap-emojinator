@@ -92,7 +92,7 @@ I've put in Javascript standard style, which I think I like - weird not using se
 
 Trying to auth with Google Vision... I have no idea what I'm doing.
 
- #[https://www.youtube.com/watch?v=xQtXsp4tIbw](Karen O & Trent Reznor - Immigrant song)
+ #[Karen O & Trent Reznor - Immigrant song](https://www.youtube.com/watch?v=xQtXsp4tIbw)
 
 ## 26/01/2017 - 12:10 Cloud dreams
 

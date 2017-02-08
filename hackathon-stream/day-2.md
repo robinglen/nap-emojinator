@@ -47,4 +47,4 @@ I might try a code clean up after this too, just so it's not such a mess.
 
 I managed to get an award, not the top spot but an award for most valiant hack. You can watch the presentation here:
 
-[Presentation](/hackathon-stream/video/video.mov)
+[Presentation](/hackathon-stream/video/video.mp4)
