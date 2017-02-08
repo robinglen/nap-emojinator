@@ -2,6 +2,8 @@
 
 A total of 86 issues where found going back to: Thursday May 28 2015
 
+You can watch the [presentation here](/hackathon-stream/video/video.mp4).
+
 ## No face detected
 
 | Cover                                                                                                                                           |
