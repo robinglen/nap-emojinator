@@ -27,7 +27,7 @@ I have now run the final data collection, got all the results.
 ![Trends](/hackathon-stream/img/trends.png)
 
 The breakdown can be found here.
-[Results]('results.md')
+[Results](results.md)
 
 There is a server to get the results from keen, the server can be accessed like so:
 
